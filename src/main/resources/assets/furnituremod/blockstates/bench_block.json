@@ -1,10 +1,10 @@
 {
   "variants": {
     "normal": {
-      "model": "furnituremod:block/bench_block"
+      "model": "furnituremod:bench_block"
     },
     "inventory": {
-      "model": "furnituremod:block/bench_block"
+      "model": "furnituremod:bench_block"
     }
   }
 }
