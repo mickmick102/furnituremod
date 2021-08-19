@@ -1,0 +1,116 @@
+{
+	"textures": {
+		"0": "furnituremod:blocks/bench_oak",
+		"particle": "furnituremod:blocks/bench_oak"
+	},
+	"elements": [
+		{
+			"name": "Top",
+			"from": [1, 6, 2],
+			"to": [15, 8, 14],
+			"faces": {
+				"north": {"uv": [7, 1, 14, 2], "texture": "#0"},
+				"east": {"uv": [7, 2, 13, 3], "texture": "#0"},
+				"south": {"uv": [7, 0, 14, 1], "texture": "#0"},
+				"west": {"uv": [7, 2, 13, 3], "texture": "#0"},
+				"up": {"uv": [7, 6, 0, 0], "texture": "#0"},
+				"down": {"uv": [7, 6, 0, 0], "texture": "#0"}
+			}
+		},
+		{
+			"name": "barre_E",
+			"from": [12.5, 2, 2.5],
+			"to": [13.5, 4, 13.5],
+			"faces": {
+				"north": {"uv": [13.5, 6, 14, 7], "texture": "#0"},
+				"east": {"uv": [7, 5, 12.5, 6], "texture": "#0"},
+				"south": {"uv": [13, 6, 13.5, 7], "texture": "#0"},
+				"west": {"uv": [7, 4, 12.5, 5], "texture": "#0"},
+				"up": {"uv": [13, 9.5, 12.5, 4], "texture": "#0"},
+				"down": {"uv": [12.5, 13.5, 12, 8], "texture": "#0"}
+			}
+		},
+		{
+			"name": "pilier_ES",
+			"from": [12, 0, 11],
+			"to": [14, 6, 13],
+			"faces": {
+				"north": {"uv": [10, 8, 11, 11], "texture": "#0"},
+				"east": {"uv": [9, 8, 10, 11], "texture": "#0"},
+				"south": {"uv": [8, 8, 9, 11], "texture": "#0"},
+				"west": {"uv": [11, 8, 12, 11], "texture": "#0"},
+				"down": {"uv": [14, 2, 13, 3], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "pilier_EN",
+			"from": [12, 0, 3],
+			"to": [14, 6, 5],
+			"faces": {
+				"north": {"uv": [7, 11, 8, 14], "texture": "#0"},
+				"east": {"uv": [7, 8, 8, 11], "texture": "#0"},
+				"south": {"uv": [8, 11, 9, 14], "texture": "#0"},
+				"west": {"uv": [9, 11, 10, 14], "texture": "#0"},
+				"down": {"uv": [14, 2, 13, 3], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "barre_O",
+			"from": [2.5, 2, 2.5],
+			"to": [3.5, 4, 13.5],
+			"faces": {
+				"north": {"uv": [13, 8, 13.5, 9], "texture": "#0"},
+				"east": {"uv": [7, 7, 12.5, 8], "texture": "#0"},
+				"south": {"uv": [13, 7, 13.5, 8], "texture": "#0"},
+				"west": {"uv": [7, 6, 12.5, 7], "texture": "#0"},
+				"up": {"uv": [16, 5.5, 15.5, 0], "texture": "#0"},
+				"down": {"uv": [15.5, 5.5, 15, 0], "texture": "#0"}
+			}
+		},
+		{
+			"name": "pilier_OS",
+			"from": [2, 0, 11],
+			"to": [4, 6, 13],
+			"faces": {
+				"north": {"uv": [1, 12, 2, 15], "texture": "#0"},
+				"east": {"uv": [2, 12, 3, 15], "texture": "#0"},
+				"south": {"uv": [3, 12, 4, 15], "texture": "#0"},
+				"west": {"uv": [5, 12, 6, 15], "texture": "#0"},
+				"down": {"uv": [14, 2, 13, 3], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "pilier_ON",
+			"from": [2, 0, 3],
+			"to": [4, 6, 5],
+			"faces": {
+				"north": {"uv": [11, 11, 12, 14], "texture": "#0"},
+				"east": {"uv": [5, 12, 6, 15], "texture": "#0"},
+				"south": {"uv": [3, 12, 4, 15], "texture": "#0"},
+				"west": {"uv": [10, 11, 11, 14], "texture": "#0"},
+				"down": {"uv": [14, 2, 13, 3], "texture": "#0", "cullface": "down"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "Tabouret",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0,
+				{
+					"name": "est",
+					"origin": [0, 0, 0],
+					"color": 0,
+					"children": [1, 2, 3]
+				},
+				{
+					"name": "ouest",
+					"origin": [0, 0, 0],
+					"color": 0,
+					"children": [4, 5, 6]
+				}
+			]
+		}
+	]
+}

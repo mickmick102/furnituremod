@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "furnituremod",
+    "name": "FurnitureMod",
+    "description": "A basic mod that add furniture",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "mickmick102"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
