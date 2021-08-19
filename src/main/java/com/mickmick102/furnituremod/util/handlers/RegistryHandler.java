@@ -24,11 +24,11 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onModelRegister(ModelRegistryEvent event) {
         for (Item item: ItemInit.ITEMS) {
-            FurnitureMod.proxy.registerItemRenderer(item, 0, "normal");
+            FurnitureMod.proxy.registerItemRenderer(item, 0, "inventory");
         }
 
         for (Block block: BlockInit.BLOCKS) {
-            FurnitureMod.proxy.registerItemRenderer(Item.getItemFromBlock(block), 0, "normal");
+            FurnitureMod.proxy.registerItemRenderer(Item.getItemFromBlock(block), 0, "inventory");
         }
     }
 
