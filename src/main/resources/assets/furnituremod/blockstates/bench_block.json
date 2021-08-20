@@ -1,10 +1,11 @@
 {
+  "forge_marker": 1,
   "variants": {
-    "normal": {
-      "model": "furnituremod:bench_block"
-    },
-    "inventory": {
-      "model": "furnituremod:bench_block"
-    }
+    "normal": { "model": "furnituremod:bench_block" },
+    "inventory": { "model": "furnituremod:bench_block" },
+    "facing=east": { "model": "furnituremod:bench_block" },
+    "facing=south": { "model": "furnituremod:bench_block", "y": 90 },
+    "facing=west": { "model": "furnituremod:bench_block", "y": 180 },
+    "facing=north": { "model": "furnituremod:bench_block", "y": 270 }
   }
 }
