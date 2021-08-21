@@ -1,11 +1,65 @@
 {
   "forge_marker": 1,
   "variants": {
-    "normal": { "model": "furnituremod:bench_block" },
-    "inventory": { "model": "furnituremod:bench_block" },
-    "facing=east": { "model": "furnituremod:bench_block" },
-    "facing=south": { "model": "furnituremod:bench_block", "y": 90 },
-    "facing=west": { "model": "furnituremod:bench_block", "y": 180 },
-    "facing=north": { "model": "furnituremod:bench_block", "y": 270 }
+    "facing=west,left=false,right=false": {
+      "model": "furnituremod:bench_block",
+      "y": 90
+    },
+    "facing=west,left=true,right=false": {
+      "model": "furnituremod:bench_block_side_2",
+      "y": 90
+    },
+    "facing=west,left=false,right=true": {
+      "model": "furnituremod:bench_block_side_1",
+      "y": 90
+    },
+    "facing=west,left=true,right=true": {
+      "model": "furnituremod:bench_block_mid",
+      "y": 90
+    },
+    "facing=north,left=false,right=false": {
+      "model": "furnituremod:bench_block",
+      "y": 180
+    },
+    "facing=north,left=true,right=false": {
+      "model": "furnituremod:bench_block_side_2",
+      "y": 180
+    },
+    "facing=north,left=false,right=true": {
+      "model": "furnituremod:bench_block_side_1",
+      "y": 180
+    },
+    "facing=north,left=true,right=true": {
+      "model": "furnituremod:bench_block_mid",
+      "y": 180
+    },
+    "facing=east,left=false,right=false": {
+      "model": "furnituremod:bench_block",
+      "y": 270
+    },
+    "facing=east,left=true,right=false": {
+      "model": "furnituremod:bench_block_side_2",
+      "y": 270
+    },
+    "facing=east,left=false,right=true": {
+      "model": "furnituremod:bench_block_side_1",
+      "y": 270
+    },
+    "facing=east,left=true,right=true": {
+      "model": "furnituremod:bench_block_mid",
+      "y": 270
+    },
+    "facing=south,left=false,right=false": {
+      "model": "furnituremod:bench_block"
+    },
+    "facing=south,left=true,right=false": {
+      "model": "furnituremod:bench_block_side_2"
+    },
+    "facing=south,left=false,right=true": {
+      "model": "furnituremod:bench_block_side_1"
+    },
+    "facing=south,left=true,right=true": {
+      "model": "furnituremod:bench_block_mid"
+    }
   }
 }

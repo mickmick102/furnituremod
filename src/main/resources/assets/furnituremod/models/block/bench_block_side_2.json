@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"0": "furnituremod:block/bench_oak",
-		"particle": "furnituremod:block/bench_oak"
+		"0": "furnituremod:blocks/bench_oak",
+		"particle": "furnituremod:blocks/bench_oak"
 	},
 	"elements": [
 		{
@@ -103,6 +103,30 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [39, 45, 0],
+			"translation": [0, -1.25, -1.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [39, 45, 0],
+			"translation": [0, -1.25, -1.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 0.75, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [45, 45, 0],
+			"translation": [0, 1.75, 0],
+			"scale": [0.76, 0.76, 0.76]
+		},
+		"head": {
+			"translation": [0, 1.5, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "Tabouret",

@@ -11,10 +11,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class FurnitureBlock extends BlockBase {
+public class BlockFurniture extends BlockBase {
+
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-    public FurnitureBlock(String name, Material material, float hardness, float resistance, int miningLevel, String tool) {
+    public BlockFurniture(String name, Material material, float hardness, float resistance, int miningLevel, String tool) {
         super(name, material, hardness, resistance, miningLevel, tool);
 
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
