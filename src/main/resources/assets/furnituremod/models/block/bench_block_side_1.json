@@ -63,43 +63,6 @@
 				"west": {"uv": [9, 11, 10, 14], "texture": "#0"},
 				"down": {"uv": [14, 2, 13, 3], "texture": "#0", "cullface": "down"}
 			}
-		},
-		{
-			"name": "barre_O",
-			"from": [2.5, 2, 2.5],
-			"to": [3.5, 4, 13.5],
-			"faces": {
-				"north": {"uv": [13, 8, 13.5, 9], "texture": "#0"},
-				"east": {"uv": [7, 7, 12.5, 8], "texture": "#0"},
-				"south": {"uv": [13, 7, 13.5, 8], "texture": "#0"},
-				"west": {"uv": [7, 6, 12.5, 7], "texture": "#0"},
-				"up": {"uv": [16, 5.5, 15.5, 0], "texture": "#0"},
-				"down": {"uv": [15.5, 5.5, 15, 0], "texture": "#0"}
-			}
-		},
-		{
-			"name": "pilier_OS",
-			"from": [2, 0, 11],
-			"to": [4, 6, 13],
-			"faces": {
-				"north": {"uv": [1, 12, 2, 15], "texture": "#0"},
-				"east": {"uv": [2, 12, 3, 15], "texture": "#0"},
-				"south": {"uv": [3, 12, 4, 15], "texture": "#0"},
-				"west": {"uv": [5, 12, 6, 15], "texture": "#0"},
-				"down": {"uv": [14, 2, 13, 3], "texture": "#0", "cullface": "down"}
-			}
-		},
-		{
-			"name": "pilier_ON",
-			"from": [2, 0, 3],
-			"to": [4, 6, 5],
-			"faces": {
-				"north": {"uv": [11, 11, 12, 14], "texture": "#0"},
-				"east": {"uv": [5, 12, 6, 15], "texture": "#0"},
-				"south": {"uv": [3, 12, 4, 15], "texture": "#0"},
-				"west": {"uv": [10, 11, 11, 14], "texture": "#0"},
-				"down": {"uv": [14, 2, 13, 3], "texture": "#0", "cullface": "down"}
-			}
 		}
 	],
 	"display": {
@@ -142,7 +105,7 @@
 					"name": "ouest",
 					"origin": [0, 0, 0],
 					"color": 0,
-					"children": [5, 6, 7]
+					"children": []
 				}
 			]
 		}
