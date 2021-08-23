@@ -6,13 +6,17 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 
 public class BlockBench extends BlockFurniture {
 
     private static final PropertyBool LEFT = PropertyBool.create("left");
     private static final PropertyBool RIGHT = PropertyBool.create("right");
+
+    private static final AxisAlignedBB AABB = new AxisAlignedBB(0.0,0.0,0.0,1,0.5,1.0);
 
     public BlockBench(String name, Material material, float hardness, float resistance, int miningLevel, String tool) {
         super(name, material, hardness, resistance, miningLevel, tool);
@@ -52,6 +56,15 @@ public class BlockBench extends BlockFurniture {
                 break;
         }
         return actualState;
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return AABB;
+    }
+    @Override
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+        return AABB;
     }
 
     private Boolean isWithSameOrientation(IBlockState currentBlockState, IBlockState otherBlockState) {
