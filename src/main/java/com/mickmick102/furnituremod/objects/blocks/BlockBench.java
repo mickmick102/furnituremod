@@ -9,7 +9,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 
 public class BlockBench extends BlockFurniture {
 
@@ -21,7 +20,6 @@ public class BlockBench extends BlockFurniture {
     public BlockBench(String name, Material material, float hardness, float resistance, int miningLevel, String tool) {
         super(name, material, hardness, resistance, miningLevel, tool);
 
-        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.setDefaultState(this.blockState.getBaseState().withProperty(LEFT, false));
         this.setDefaultState(this.blockState.getBaseState().withProperty(RIGHT, false));
     }
@@ -62,6 +60,7 @@ public class BlockBench extends BlockFurniture {
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return AABB;
     }
+
     @Override
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
         return AABB;
