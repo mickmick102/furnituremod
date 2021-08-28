@@ -1,0 +1,6 @@
+{
+  "parent": "furnituremod:block/spruce_barre_block",
+  "textures": {
+    "layer0": "blocks/planks_spruce"
+  }
+}

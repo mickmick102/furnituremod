@@ -1,0 +1,6 @@
+{
+  "parent": "furnituremod:block/dark_oak_barre_block",
+  "textures": {
+    "layer0": "blocks/planks_big_oak"
+  }
+}

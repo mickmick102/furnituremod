@@ -1,0 +1,6 @@
+{
+  "parent": "furnituremod:block/jungle_barre_block",
+  "textures": {
+    "layer0": "blocks/planks_jungle"
+  }
+}

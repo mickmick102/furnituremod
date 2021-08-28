@@ -1,0 +1,41 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "facing=north": {
+      "model": "furnituremod:birch_barre_block",
+      "transform": {
+        "translation": [0,0,0.25],
+        "rotation":{
+          "y": 90
+        }
+      }
+    },
+    "facing=east": {
+      "model": "furnituremod:birch_barre_block",
+      "transform": {
+        "translation": [-0.25,0,0],
+        "rotation":{
+          "y": 0
+        }
+      }
+    },
+    "facing=west": {
+      "model": "furnituremod:birch_barre_block",
+      "transform": {
+        "translation": [0.25,0,0],
+        "rotation":{
+          "y": 180
+        }
+      }
+    },
+    "facing=south": {
+      "model": "furnituremod:birch_barre_block",
+      "transform": {
+        "translation": [0,0,-0.25],
+        "rotation":{
+          "y": 270
+        }
+      }
+    }
+  }
+}

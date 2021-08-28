@@ -1,2 +1,7 @@
 tile.bench_block.name=Bench
-tile.barre_block.name=Barre
+tile.oak_barre_block.name=Barre de chene
+tile.acacia_barre_block.name=Barre d'acacia
+tile.spruce_barre_block.name=Barre de sapin
+tile.birch_barre_block.name=Barre de bouleau
+tile.jungle_barre_block.name=Barre de daviel
+tile.dark_oak_barre_block.name=Barre de chene sombre

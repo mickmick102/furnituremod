@@ -1,5 +1,5 @@
 {
-  "parent": "furnituremod:block/barre_block",
+  "parent": "furnituremod:block/oak_barre_block",
   "textures": {
     "layer0": "blocks/planks_oak"
   }
