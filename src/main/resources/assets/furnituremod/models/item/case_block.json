@@ -1,0 +1,6 @@
+{
+  "parent": "furnituremod:block/case_block",
+  "textures": {
+    "layer0": "furnituremod:blocks/case_oak"
+  }
+}

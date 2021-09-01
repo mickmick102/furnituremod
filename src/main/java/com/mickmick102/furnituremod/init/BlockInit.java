@@ -2,6 +2,7 @@ package com.mickmick102.furnituremod.init;
 
 import com.mickmick102.furnituremod.objects.blocks.BlockBarre;
 import com.mickmick102.furnituremod.objects.blocks.BlockBench;
+import com.mickmick102.furnituremod.objects.blocks.BlockFurniture;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -14,6 +15,7 @@ public class BlockInit {
     //BLOCKS
     public static final Block BENCH_BLOCK = new BlockBench("bench_block", Material.WOOD, 10.0f, 10.0f, 2, "axe");
 
+    public static final Block CASE_BLOCK = new BlockFurniture("case_block", Material.WOOD, 10.0f, 10.0f, 2, "axe");
     // Barre block
     public static final Block OAK_BARRE_BLOCK = new BlockBarre("oak_barre_block", Material.WOOD, 10.0f, 10.0f, 2, "axe");
     public static final Block SPRUCE_BARRE_BLOCK = new BlockBarre("spruce_barre_block", Material.WOOD, 10.0f, 10.0f, 2, "axe");
