@@ -44,7 +44,7 @@ public class GuiHandler implements IGuiHandler {
         TileEntity tileEntity = world.getTileEntity(xyz);
         if (tileEntity instanceof TileEntityCase) {
             TileEntityCase tileEntityCase = (TileEntityCase) tileEntity;
-            return new GuiCase(player.inventory, tileEntityCase);
+            return new GuiCase(tileEntityCase, player.inventory);
         }
         return null;
     }

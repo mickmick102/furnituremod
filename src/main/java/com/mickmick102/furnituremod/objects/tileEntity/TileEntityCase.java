@@ -17,8 +17,7 @@ import net.minecraft.util.NonNullList;
 
 public class TileEntityCase extends TileEntityLockableLoot implements IInventory {
 
-    private NonNullList<ItemStack> placardContents = NonNullList.<ItemStack>withSize(36, ItemStack.EMPTY);
-    private String customName;
+    private NonNullList<ItemStack> placardContents = NonNullList.<ItemStack>withSize(25, ItemStack.EMPTY);
 
     @Override
     protected NonNullList<ItemStack> getItems() {

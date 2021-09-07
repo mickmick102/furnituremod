@@ -16,13 +16,13 @@ public class ContainerCase extends Container {
 
         this.tileEntity = tileEntity;
         this.inventory = inventory;
-        numRows = tileEntity.getSizeInventory() / 6;
+        numRows = tileEntity.getSizeInventory() / 5;
         // par2IInventory.openChest();
         int i = (numRows - 4) * 18;
 
         for (int j = 0; j < numRows; j++)
-            for (int i1 = 0; i1 < 6; i1++)
-                this.addSlotToContainer(new Slot(tileEntity, i1 + j * 6, 35 + i1 * 18, 20 + j * 18));
+            for (int i1 = 0; i1 < 5; i1++)
+                this.addSlotToContainer(new Slot(tileEntity, i1 + j * 5, 25 + i1 * 18, 20 + j * 18));
 
         for (int k = 0; k < 3; k++)
             for (int j1 = 0; j1 < 9; j1++)
