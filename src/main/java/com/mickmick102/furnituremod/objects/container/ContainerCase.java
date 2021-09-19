@@ -10,81 +10,64 @@ import net.minecraft.item.ItemStack;
 public class ContainerCase extends Container {
     private TileEntityCase tileEntity;
     private IInventory inventory;
-    private int numRows;
 
     public ContainerCase(IInventory inventory, TileEntityCase tileEntity) {
-
         this.tileEntity = tileEntity;
         this.inventory = inventory;
-        numRows = tileEntity.getSizeInventory() / 5;
-        // par2IInventory.openChest();
-        int i = (numRows - 4) * 18;
 
-        for (int j = 0; j < numRows; j++)
-            for (int i1 = 0; i1 < 5; i1++)
-                this.addSlotToContainer(new Slot(tileEntity, i1 + j * 5, 25 + i1 * 18, 20 + j * 18));
+        for(int i = 0; i < 2; i++)
+            for(int l = 0; l < 8; l++)
+                addSlotToContainer(new Slot(tileEntity, l + (i * 8), 17 + l * 18, 17 + i * 18));
 
-        for (int k = 0; k < 3; k++)
-            for (int j1 = 0; j1 < 9; j1++)
-                this.addSlotToContainer(new Slot(inventory, j1 + k * 9 + 9, 8 + j1 * 18, 103 + k * 18 + i));
+        for(int j = 0; j < 3; j++)
+            for(int i1 = 0; i1 < 9; i1++)
+                addSlotToContainer(new Slot(inventory, i1 + j * 9 + 9, 8 + i1 * 18, 84 + j * 18));
 
-        for (int l = 0; l < 9; l++)
-            this.addSlotToContainer(new Slot(inventory, l, 8 + l * 18, 161 + i));
-
+        for(int k = 0; k < 9; k++)
+            addSlotToContainer(new Slot(inventory, k, 8 + k * 18, 142));
     }
 
     @Override
-    public boolean canInteractWith(EntityPlayer playerIn) {
-        // TODO Auto-generated method stub
-        return tileEntity.isUsableByPlayer(playerIn);
+    public boolean canInteractWith(EntityPlayer par1EntityPlayer) {
+        return tileEntity.isUsableByPlayer(par1EntityPlayer);
     }
 
-    public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
-    {
+    @Override
+    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par1) {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = (Slot)this.inventorySlots.get(index);
+        Slot slot = (Slot)inventorySlots.get(par1);
 
-        if (slot != null && slot.getHasStack())
-        {
+        if(slot != null && slot.getHasStack()) {
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
 
-            if (index < this.numRows * 9)
-            {
-                if (!this.mergeItemStack(itemstack1, this.numRows * 9, this.inventorySlots.size(), true))
-                {
+            if(par1 < 16) {
+                if(!mergeItemStack(itemstack1, 16, 52, true))
                     return ItemStack.EMPTY;
-                }
-            }
-            else if (!this.mergeItemStack(itemstack1, 0, this.numRows * 9, false))
-            {
+            } else if(((Slot)inventorySlots.get(0)).isItemValid(itemstack1)) {
+                if(!mergeItemStack(itemstack1, 0, 16, false))
+                    return ItemStack.EMPTY;
+            } else {
                 return ItemStack.EMPTY;
             }
 
-            if (itemstack1.getCount() == 0)
-            {
+            if(itemstack1.getCount() == 0)
                 slot.putStack(ItemStack.EMPTY);
-            }
             else
-            {
                 slot.onSlotChanged();
-            }
+
+            if(itemstack1.getCount() == itemstack.getCount())
+                return ItemStack.EMPTY;
+
+            slot.onSlotChanged();
         }
 
         return itemstack;
     }
 
-    public void onContainerClosed(EntityPlayer playerIn)
-    {
+    public void onContainerClosed(EntityPlayer playerIn) {
         super.onContainerClosed(playerIn);
         this.inventory.closeInventory(playerIn);
     }
 
-    /**
-     * Return this chest container's lower chest inventory.
-     */
-    public IInventory getLowerChestInventory()
-    {
-        return this.inventory;
-    }
 }

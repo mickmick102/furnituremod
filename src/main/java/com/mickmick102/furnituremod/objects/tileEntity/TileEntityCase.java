@@ -18,6 +18,7 @@ import net.minecraft.util.NonNullList;
 public class TileEntityCase extends TileEntityLockableLoot implements IInventory {
 
     private NonNullList<ItemStack> placardContents = NonNullList.<ItemStack>withSize(25, ItemStack.EMPTY);
+    private boolean hasBeenCleared;
 
     @Override
     protected NonNullList<ItemStack> getItems() {
@@ -91,63 +92,45 @@ public class TileEntityCase extends TileEntityLockableLoot implements IInventory
 
     }
 
-    public void readFromNBT(NBTTagCompound compound) {
-        super.readFromNBT(compound);
-        this.placardContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
-
-        if (compound.hasKey("CustomName", 8)) {
-            this.customName = compound.getString("CustomName");
-        }
-
-        if (!this.checkLootAndRead(compound)) {
-            NBTTagList nbttaglist = compound.getTagList("Items", 10);
-
-            for (int i = 0; i < nbttaglist.tagCount(); ++i) {
-                NBTTagCompound nbttagcompound = nbttaglist.getCompoundTagAt(i);
-                int j = nbttagcompound.getByte("Slot") & 255;
-
-                if (j >= 0 && j < this.placardContents.size()) {
-                    this.placardContents.set(j, new ItemStack(nbttagcompound));
-                }
-            }
-        }
+    public void readFromNBT(NBTTagCompound p_readFromNBT_1_) {
+        super.readFromNBT(p_readFromNBT_1_);
+        this.loadFromNbt(p_readFromNBT_1_);
     }
 
-    public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-        super.writeToNBT(compound);
+    public NBTTagCompound writeToNBT(NBTTagCompound p_writeToNBT_1_) {
+        super.writeToNBT(p_writeToNBT_1_);
+        return this.saveToNbt(p_writeToNBT_1_);
+    }
 
-        if (!this.checkLootAndWrite(compound)) {
-            NBTTagList nbttaglist = new NBTTagList();
+    public void loadFromNbt(NBTTagCompound p_loadFromNbt_1_) {
+        this.placardContents = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
+        if (!this.checkLootAndRead(p_loadFromNbt_1_) && p_loadFromNbt_1_.hasKey("Items", 9)) {
+            ItemStackHelper.loadAllItems(p_loadFromNbt_1_, this.placardContents);
+        }
 
-            for (int i = 0; i < this.placardContents.size(); ++i) {
-                if (this.placardContents.get(i) != null) {
-                    NBTTagCompound nbttagcompound = new NBTTagCompound();
-                    nbttagcompound.setByte("Slot", (byte) i);
-                    this.placardContents.get(i).writeToNBT(nbttagcompound);
-                    nbttaglist.appendTag(nbttagcompound);
-                }
-            }
+        if (p_loadFromNbt_1_.hasKey("CustomName", 8)) {
+            this.customName = p_loadFromNbt_1_.getString("CustomName");
+        }
 
-            compound.setTag("Items", nbttaglist);
+    }
+
+    public NBTTagCompound saveToNbt(NBTTagCompound p_saveToNbt_1_) {
+        if (!this.checkLootAndWrite(p_saveToNbt_1_)) {
+            ItemStackHelper.saveAllItems(p_saveToNbt_1_, this.placardContents, false);
         }
 
         if (this.hasCustomName()) {
-            compound.setString("CustomName", this.customName);
+            p_saveToNbt_1_.setString("CustomName", this.customName);
         }
 
-        return compound;
-    }
-
-    @Override
-    public void clear() {
-        this.fillWithLoot((EntityPlayer) null);
-
-        for (int i = 0; i < this.placardContents.size(); ++i) {
-            this.placardContents.set(i, ItemStack.EMPTY);
+        if (!p_saveToNbt_1_.hasKey("Lock") && this.isLocked()) {
+            this.getLockCode().toNBT(p_saveToNbt_1_);
         }
+
+        return p_saveToNbt_1_;
     }
 
-    @Override
+    /*@Override
     public NBTTagCompound getUpdateTag() {
         NBTTagCompound compound = super.getUpdateTag();
 
@@ -194,7 +177,7 @@ public class TileEntityCase extends TileEntityLockableLoot implements IInventory
                 }
             }
         }
-    }
+    }*/
 
     @Override
     public SPacketUpdateTileEntity getUpdatePacket() {
@@ -207,4 +190,18 @@ public class TileEntityCase extends TileEntityLockableLoot implements IInventory
             readFromNBT(pkt.getNbtCompound());
         }
     }
+
+    public boolean isCleared() {
+        return this.hasBeenCleared;
+    }
+
+    public void clear() {
+        this.hasBeenCleared = true;
+        super.clear();
+    }
+
+    public boolean shouldDrop() {
+        return !this.isEmpty() || this.hasCustomName() || this.lootTable != null;
+    }
+
 }
